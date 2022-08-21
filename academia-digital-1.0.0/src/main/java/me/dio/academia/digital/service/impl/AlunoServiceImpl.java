@@ -12,6 +12,8 @@ import me.dio.academia.digital.entity.form.AlunoForm;
 import me.dio.academia.digital.entity.form.AlunoUpdateForm;
 import me.dio.academia.digital.infra.utils.JavaTimeUtils;
 import me.dio.academia.digital.repository.AlunoRepository;
+import me.dio.academia.digital.repository.AvaliacaoFisicaRepository;
+import me.dio.academia.digital.repository.MatriculaRepository;
 import me.dio.academia.digital.service.IAlunoService;
 
 @Service
@@ -19,6 +21,12 @@ public class AlunoServiceImpl implements IAlunoService{
 
 	@Autowired
 	private AlunoRepository repository;
+	
+	@Autowired
+	private AvaliacaoFisicaRepository avaliacaoFisicaRepository;
+	
+	@Autowired
+	private MatriculaRepository matriculaRepository;
 
 	@Override
 	public Aluno create(AlunoForm form) {
@@ -34,8 +42,8 @@ public class AlunoServiceImpl implements IAlunoService{
 
 	@Override
 	public Aluno get(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return repository.findById(id).get();
 	}
 
 	@Override
@@ -58,7 +66,6 @@ public class AlunoServiceImpl implements IAlunoService{
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
 		
 	}
 
