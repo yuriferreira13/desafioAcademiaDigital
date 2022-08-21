@@ -7,8 +7,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
-import org.hibernate.validator.constraints.br.CPF;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,7 +21,7 @@ public class AlunoForm {
 	private String nome;
 
 	@NotBlank(message = "Preencha o campo corretamente.")
-	@CPF(message = "'${validatedvalue}' é inválido!")
+	//@CPF(message = "'${validatedvalue}' é inválido!")
 	private String cpf;
 
 	@NotBlank(message = "Preencha o campo corretamente.")
